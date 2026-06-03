@@ -1,26 +1,42 @@
 /*
-      criando variáveis
+    criando variáveis
 */
 
 const nome = document.querySelector("#nome");
+const email = document.querySelector("#email");
+const telefone = document.querySelector("#telefone");
+
 const button = document.querySelector("button");
-const lista = document.querySelector(".lista");    
+const lista = document.querySelector(".lista");
+
+
 
 /*
-      criando função
+    criando função
 */
 
-button.addEventListener("click", function(event)  {
-        event.preventDefault();   
-        const inputValue = nome.value;
-        const templateHTML = `<li>${inputValue}</li>`;
-        console.log(inputValue);
+button.addEventListener("click", function(event) {
+    event.preventDefault();
 
-        // Incluir itens no HTML
-        lista.innerHTML += `<li>${nome.value}</li>`;
-
-        // Limpando campo
-        nome.value = "";
-
-    });
     
+
+    const inputNome = nome.value;
+    const inputEmail = email.value;
+    const inputTelefone = telefone.value;
+
+    console.log("Nome:", inputNome);
+    console.log("Email:", inputEmail);
+    console.log("Telefone:", inputTelefone);
+
+    lista.innerHTML += `
+        <li>
+            Nome: ${inputNome}<br>
+            E-mail: ${inputEmail}<br>
+            Telefone: ${inputTelefone}
+        </li>
+    `;
+
+    nome.value = "";
+    email.value = "";
+    telefone.value = "";
+});
