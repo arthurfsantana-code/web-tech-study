@@ -71,5 +71,8 @@ header h1 {
     padding: 10px;
     border: 0;
     cursor: pointer;
+    display : flex;
+    justify-content: center;
+    
 
 }
